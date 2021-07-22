@@ -1,0 +1,275 @@
+<div class="text-center">
+    <nav style="--bs-breadcrumb-divider: '';" aria-label="breadcrumb" class="py-3 banner">
+        <ol class="breadcrumb">
+          <li class="breadcrumb-item"><a href="#" class="px-4">Personal</a></li>
+          <li class="breadcrumb-item"><a class="px-4">Education</a></li>
+          <li class="breadcrumb-item"><a class="px-4">Employment</a></li>
+        </ol>
+      </nav>
+</div>
+
+<div class="bg-light text-center" id="employment">
+    <div class="container pt-4 pb-5">
+      <div class="row">
+        <div class="col"></div>
+        <div class="col">
+          <form [formGroup]="Employment">
+            <table class="text-end">
+              <tr>
+                <td><label for="Designation">Current Designation*</label></td>
+                <td><input type="text" formControlName="JobSeekerDesignation" class="form-control" placeholder="Your job title" [ngClass]="{ 'is-invalid': isValidInput('JobSeekerDesignation') }">
+                  <div *ngIf="isValidInput('JobSeekerDesignation')" class="invalid-feedback text-start">
+                    <div *ngIf="Employment.controls['JobSeekerDesignation'].errors.required">
+                      Designation is required.
+                    </div>
+                  </div>
+                </td>
+              </tr>
+              <tr>
+                <td><label for="Company">Current Company*</label></td>
+                <td><input type="text" formControlName="JobSeekerCompany" class="form-control" placeholder="Where you are currently working" [ngClass]="{ 'is-invalid': isValidInput('JobSeekerCompany') }">
+                  <div *ngIf="isValidInput('JobSeekerCompany')" class="invalid-feedback text-start">
+                    <div *ngIf="Employment.controls['JobSeekerCompany'].errors.required">
+                      Company Name is required.
+                    </div>
+                  </div>
+                </td>
+              </tr>
+              <tr>
+                <td><label for="Salary">Annual Salary*</label></td>
+                <td><div class="row">
+                        <div class="col">
+                            <select class="form-select" formControlName="JobSeekerAnnualSalary" [ngClass]="{ 'is-invalid': isValidInput('JobSeekerAnnualSalary') }">
+                                <option value="0" selected>Select</option>
+                                <option value="0">0</option>
+                                <option value="1">1</option>
+                                <option value="2">2</option>
+                                <option value="3">3</option>
+                                <option value="4">4</option>
+                                <option value="5">5</option>
+                                <option value="6">6</option>
+                                <option value="7">7</option>
+                                <option value="8">8</option>
+                                <option value="9">9</option>
+                                <option value="10">10</option>
+                            </select>
+                            <div *ngIf="isValidInput('JobSeekerAnnualSalary')" class="invalid-feedback text-start">
+                              <div *ngIf="Employment.controls['JobSeekerAnnualSalary'].errors.required">
+                                Annual Salary is required.
+                              </div>
+                            </div>
+                        </div>
+                        <div class="col-2">
+                            <label for="Lakhs"> in Lakhs</label>
+                        </div>
+                    </div>
+                </td>
+              </tr>
+              <tr>
+                <td><label for="WorkingSince">Working since*</label></td>
+                <td><div class="row">
+                  <div class="col">
+                    <input type="date" formControlName="JobSeekerWorkingFrom" class="form-control" [ngClass]="{ 'is-invalid': isValidInput('JobSeekerWorkingFrom') }">
+                    <div *ngIf="isValidInput('JobSeekerWorkingFrom')" class="invalid-feedback text-start">
+                      <div *ngIf="Employment.controls['JobSeekerWorkingFrom'].errors.required">
+                        Working from is required.
+                      </div>
+                      <div *ngIf="Employment.controls['JobSeekerWorkingFrom'].errors.invalidDate">
+                        Please enter proper Date
+                      </div>
+                    </div>
+                  </div>
+                  <div class="col-1">
+                      <label for="To">To</label>
+                  </div>
+                  <div class="col">
+                    <input type="date" formControlName="JobSeekerWorkingTo" class="form-control" [ngClass]="{ 'is-invalid': isValidInput('JobSeekerWorkingTo') }">
+                    <div *ngIf="isValidInput('JobSeekerWorkingTo')" class="invalid-feedback text-start">
+                      <div *ngIf="Employment.controls['JobSeekerWorkingTo'].errors.required">
+                        Working to is required.
+                      </div>
+                    </div>
+                  </div>
+              </div>
+                </td>
+              </tr>
+              <tr>
+                <td><label for="NoticePeriod">Duration of Notice Period</label></td>
+                <td><select class="form-select">
+                    <option value="0" selected>15 Days or Less</option>
+                    <option value="1">1 Month</option>
+                    <option value="2">2 Month</option>
+                    <option value="3">3 Month</option>
+                    <option value="4">4 Month</option>
+                    <option value="5">5 Month</option>
+                    <option value="6">6 Month</option>
+                </select>
+                <div class="form-check text-left">
+                  <input type="checkbox" class="form-check-input">
+                  <label class="form-check-label" for="NoticePeriod">Serving notice period</label>
+                </div>
+              </td>
+              </tr>
+              <tr>
+                <td><label for="Industry">Company Industry</label></td>
+                <td><select class="form-select">
+                        <option value="0" selected>Select the industry your company belongs to</option>
+                        <option value="1">Oil & Gas</option>
+                        <option value="2">Power</option>
+                        <option value="3">Food Processing</option>
+                        <option value="4">Analytics</option>
+                        <option value="5">Call Center</option>
+                        <option value="6">3D Printing</option>
+                        <option value="7">Banking</option>
+                        <option value="8">Financial Services</option>
+                        <option value="9">Insurance</option>
+                        <option value="10">Automobile</option>
+                        <option value="11">Import & Export</option>
+                        <option value="12">Agriculture</option>
+                        <option value="13">Law Enforcement</option>
+                        <option value="14">Design</option>
+                      </select>
+                </td>
+              </tr>
+              <tr>
+                <td><label for="City">Current City*</label></td>
+                <td><select class="form-select" formControlName="JobSeekerCurrentCity" aria-placeholder="Tell us about your current city" [ngClass]="{ 'is-invalid': isValidInput('JobSeekerCurrentCity') }">
+                      <ng-container *ngIf="!outsideIndia">
+                        <option value="New Delhi">New Delhi</option>
+                        <option value="Gurgaon">Gurgaon</option>
+                        <option value="Mumbai">Mumbai</option>
+                        <option value="Bangalore">Bangalore</option>
+                        <option value="Hyderabad">Hyderabad</option>
+                        <option value="Chennai">Chennai</option>
+                        <option value="Kolkata">Kolkata</option>
+                        <option value="Pune">Pune</option>
+                        <option value="Ahmedabad">Ahmedabad</option>
+                        <option value="Noida">Noida</option>
+                      </ng-container>
+                      <ng-container *ngIf="outsideIndia">
+                        <option value="Singapore">Singapore</option>
+                        <option value="Australia">Australia</option>
+                        <option value="United States">United States</option>
+                        <option value="Dubai">Dubai</option>
+                        <option value="United Kingdom">United Kingdom</option>
+                        <option value="Germany">Germany</option>
+                        <option value="Canada">Canada</option>  
+                        <option value="Switzerland">Switzerland</option>
+                        <option value="France">France</option>
+                        <option value="Hong Kong">Hong Kong</option>
+                      </ng-container>
+                  </select>
+                  <div *ngIf="isValidInput('JobSeekerCurrentCity')" class="invalid-feedback text-start">
+                    <div *ngIf="Personal.controls['JobSeekerCurrentCity'].errors.required">
+                      City is required.
+                    </div>
+                  </div>
+                  <div class="form-check text-left">
+                    <input type="checkbox" class="form-check-input" [checked]="outsideIndia" (change)="outsideIndia = !outsideIndia">
+                    <label class="form-check-label" for="OutsideIndia">Outside India</label>
+                  </div>
+                </td>
+              </tr>
+              <tr>
+                  <td colspan="2">
+                    <hr>
+                    <h5 class="text-center">Previous Employment</h5>
+                    </td>
+              </tr>
+              <ng-container [formGroup]="PreviousEmployment">
+                <tr>
+                  <td><label for="Designation">Designation</label></td>
+                  <td><input type="text" formControlName="JobSeekerDesignation" class="form-control" placeholder="Your job title"></td>
+                </tr>
+                <tr>
+                  <td><label for="Company">Company</label></td>
+                  <td><input type="text" formControlName="JobSeekerCompany" class="form-control" placeholder="Name of the Company/Organization"></td>
+                </tr>
+                <tr>
+                  <td><label for="Salary">Annual Salary</label></td>
+                  <td><div class="row">
+                          <div class="col">
+                              <select class="form-select" formControlName="JobSeekerAnnualSalary">
+                                  <option value="0" selected>Select</option>
+                                  <option value="0">0</option>
+                                  <option value="1">1</option>
+                                  <option value="2">2</option>
+                                  <option value="3">3</option>
+                                  <option value="4">4</option>
+                                  <option value="5">5</option>
+                                  <option value="6">6</option>
+                                  <option value="7">7</option>
+                                  <option value="8">8</option>
+                                  <option value="9">9</option>
+                                  <option value="10">10</option>
+                              </select>
+                          </div>
+                          <div class="col-2">
+                              <label for="Lakhs">in Lakhs</label>
+                          </div>
+                      </div>
+                  </td>
+                </tr>
+                <tr>
+                  <td><label for="Duration">Duration</label></td>
+                  <td><div class="row">
+                          <div class="col">
+                            <input type="date" formControlName="JobSeekerWorkingFrom" class="form-control">
+                          </div>
+                          <div class="col-1">
+                              <label for="To">To</label>
+                          </div>
+                          <div class="col">
+                            <input type="date" formControlName="JobSeekerWorkingTo" class="form-control">
+                          </div>
+                      </div>
+                  </td>
+                </tr>
+                <tr>
+                  <td><label for="City">Current City*</label></td>
+                  <td><select class="form-select" formControlName="JobSeekerCurrentCity" aria-placeholder="Tell us about your current city" [ngClass]="{ 'is-invalid': isValidInput('JobSeekerCurrentCity') }">
+                        <ng-container *ngIf="!outsideIndia">
+                          <option value="New Delhi">New Delhi</option>
+                          <option value="Gurgaon">Gurgaon</option>
+                          <option value="Mumbai">Mumbai</option>
+                          <option value="Bangalore">Bangalore</option>
+                          <option value="Hyderabad">Hyderabad</option>
+                          <option value="Chennai">Chennai</option>
+                          <option value="Kolkata">Kolkata</option>
+                          <option value="Pune">Pune</option>
+                          <option value="Ahmedabad">Ahmedabad</option>
+                          <option value="Noida">Noida</option>
+                        </ng-container>
+                        <ng-container *ngIf="outsideIndia">
+                          <option value="Singapore">Singapore</option>
+                          <option value="Australia">Australia</option>
+                          <option value="United States">United States</option>
+                          <option value="Dubai">Dubai</option>
+                          <option value="United Kingdom">United Kingdom</option>
+                          <option value="Germany">Germany</option>
+                          <option value="Canada">Canada</option>  
+                          <option value="Switzerland">Switzerland</option>
+                          <option value="France">France</option>
+                          <option value="Hong Kong">Hong Kong</option>
+                        </ng-container>
+                    </select>
+                    <div *ngIf="isValidInput('JobSeekerCurrentCity')" class="invalid-feedback text-start">
+                      <div *ngIf="Personal.controls['JobSeekerCurrentCity'].errors.required">
+                        City is required.
+                      </div>
+                    </div>
+                    <div class="form-check text-left">
+                      <input type="checkbox" class="form-check-input" [checked]="outsideIndia" (change)="outsideIndia = !outsideIndia">
+                      <label class="form-check-label" for="OutsideIndia">Outside India</label>
+                    </div>
+                  </td>
+                </tr>
+              </ng-container>
+            </table>
+            <button class="btn btn-primary" (click)="register()" [disabled]="!Employment.valid">Register Now</button>
+          </form>
+        </div>
+        <div class="col-3"></div>
+      </div>
+    </div>
+  </div>

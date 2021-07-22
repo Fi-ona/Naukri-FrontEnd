@@ -1,0 +1,23 @@
+.card{
+    border-radius: 20px;
+}
+
+img{
+    margin-top: -30px;
+}
+
+.fas{
+    background-color: grey;
+}
+
+@media (max-width : 1200px) {
+    #right-side{
+        display: none;
+    }
+}
+
+@media (max-width: 777px){
+    #searchBar{
+        display: none;
+    }
+}

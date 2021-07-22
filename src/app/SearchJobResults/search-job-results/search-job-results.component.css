@@ -1,0 +1,42 @@
+.btn{
+    background-color: rgb(255, 123, 0);
+    color: white;
+}
+
+.role{
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    height: 15px;
+    width: 600px;
+}
+
+a{
+    text-decoration: none;
+    color: black;
+}
+
+a p{
+    color: grey;
+    font-size: small;
+}
+
+.star{
+    color: orange;
+}
+
+.shadow-sm:hover{
+    transform: scale(1.01);
+}
+
+@media (max-width : 1400px) {
+    #PersonalisedJobs{
+        display: none;
+    }
+}
+
+@media (max-width: 1000px){
+    #Filter{
+        display: none;
+    }
+}
